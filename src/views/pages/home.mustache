@@ -1,7 +1,26 @@
 {{> partials/header }}
+
+    <fieldset>
+        <legend>Novo Usuario</legend>
+        <form action="/" method="get">
+            <input type="text" name="name" id="nome" placeholder="Digite um nome"><br><br>
+            <input type="text" name="age" id="idade" placeholder="Digite a idade"><br><br>
+            <input type="submit" value="Inserir Usuario" />
+        </form>
+    </fieldset>
+
+    <h2>Novo usuario do banco</h2>
+
     {{#users}}
+        
+
         <ul>
             <li>{{ id }} - {{ name }} - {{ age }}</li>
         </ul>
     {{/users}}
+    {{#nome}}
+        {{ nome }}
+    {{/nome}}
+        {{ nome }}
+
 {{> partials/footer }}
