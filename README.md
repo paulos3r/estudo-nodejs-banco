@@ -35,6 +35,7 @@ Projeto criado para aprender banco de dados integrado com nodeJS
             - /partials
         - server.ts
 
+router -> controller -> model -> instances
 ### rodar o projeto
 `npm install`,
 `npm run start-dev`

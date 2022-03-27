@@ -3,8 +3,8 @@
     <fieldset>
         <legend>Novo Usuario</legend>
         <form action="/" method="get">
-            <input type="text" name="name" id="nome" placeholder="Digite um nome"><br><br>
-            <input type="text" name="age" id="idade" placeholder="Digite a idade"><br><br>
+            <input type="text" name="nome" id="nome" placeholder="Digite um nome"><br><br>
+            <input type="text" name="idade" id="idade" placeholder="Digite a idade"><br><br>
             <input type="submit" value="Inserir Usuario" />
         </form>
     </fieldset>
@@ -12,11 +12,15 @@
     <h2>Novo usuario do banco</h2>
 
     {{#users}}
-        
 
         <ul>
-            <li>{{ id }} - {{ name }} - {{ age }}</li>
+            <li>{{ id }} - {{ name }} - {{ age }} 
+                <a href="/usuario/{{id}}/mais">+</a>
+                <a href="/usuario/{{id}}/diminur">-</a>
+                <a href="/usuario/{{id}}/excluir">Excluir</a>
+            </li>
         </ul>
+
     {{/users}}
     {{#nome}}
         {{ nome }}

@@ -13,10 +13,28 @@ export const User = sequelize.define<UserInstance>("User", {
         autoIncrement: true
     },
     name: {
+        type: DataTypes.STRING,
+        get(){
+            const raw = this.getDataValue('name').toUpperCase();
+        }
+    },
+    lestName:{
         type: DataTypes.STRING
     },
+    fullName: {
+        type: DataTypes.VIRTUAL,
+        get(){
+            return `${this.getDataValue('name')} ${this.getDataValue('lestName')}`;
+        }
+    },
     age: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        set(value:number){
+            if(value < 18 ){
+                value = 18;
+            }
+            this.setDataValue('age', value);
+        }
     }
 },
     {
